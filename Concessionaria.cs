@@ -5,7 +5,7 @@ class Concessionaria {
   private string _localizacao;
   private string _gerentePrincipal;
   private int _anoFundacao;
-  private List<Carro> _carrosDisp; 
+  private List<Carro> _carrosDisp = new List<Carro>(); 
 
   public string Localizacao {
     get {return _localizacao;}
@@ -22,11 +22,6 @@ class Concessionaria {
     set {_anoFundacao = value;}
   }
 
-  public List<Carro> CarrosDisp {
-    get {return _carrosDisp;}
-    //set {_carrosDisp.Add(value;)}
-  }
-
   public Concessionaria(string l, string gp, int af){
     Localizacao = l;
     GerentePrincipal = gp;
@@ -34,15 +29,16 @@ class Concessionaria {
   }
 
   public void AdicionarCarro(Carro x){
-    this._carrosDisp.Add(x);
+    _carrosDisp.Add(x);
   }
-
+  
   public void CalcularPortfolio(){
-    double totalPortifolio;
-    if(CarrosDisp != null){
-      foreach (Carro valor in CarrosDisp){
-        Console.WriteLine(valor.Valor);
+    double totalPortifolio = 0.0;
+    if(_carrosDisp.Count > 0){
+      foreach (Carro valor in _carrosDisp){
+        totalPortifolio += valor.Valor;
       }
+      Console.WriteLine("\n Valor total na Concessionária: R$ " + totalPortifolio);
     }
     else{
       Console.WriteLine("\n Concessionária vazia");

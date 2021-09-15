@@ -13,17 +13,14 @@ class Program {
     Console.WriteLine ("\n Valor carro Nacional: R$ " + carro1.Valor);
 
     carro2.definirValorVeiculo(1000);
-    Console.WriteLine (("\n Valor carro Importado: R$ " + carro2.Valor);
+    Console.WriteLine ("\n Valor carro Importado: R$ " + carro2.Valor);
 
-    //con.AdicionarCarro(carro1);
-    
+    con.CalcularPortfolio();
 
-    //con.CalcularPortfolio();
+    con.AdicionarCarro(carro1);
+    con.AdicionarCarro(carro2);
 
-    //con.AdicionarCarro(carro1);
-    //con.AdicionarCarro(carro2);
+    con.CalcularPortfolio();
 
-    //con.CalcularPortfolio();
-    
   }
 }
